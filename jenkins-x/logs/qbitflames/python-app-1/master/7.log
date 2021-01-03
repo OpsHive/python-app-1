@@ -1,0 +1,98 @@
+
+Showing logs for build [32mqbitflames-python-app-1-master-l8fnv-7[0m stage [32mfrom-build-pack[0m and container [32mcredential-initializer[0m
+{"level":"info","ts":1609692838.7973328,"caller":"creds-init/main.go:44","msg":"Credentials initialized."}
+
+Showing logs for build [32mqbitflames-python-app-1-master-l8fnv-7[0m stage [32mfrom-build-pack[0m and container [32mworking-dir-initializer[0m
+
+Showing logs for build [32mqbitflames-python-app-1-master-l8fnv-7[0m stage [32mfrom-build-pack[0m and container [32mplace-tools[0m
+
+Showing logs for build [32mqbitflames-python-app-1-master-l8fnv-7[0m stage [32mfrom-build-pack[0m and container [32mstep-git-source-qbitflames-python-app-1-master-l8fnv-w9tj6[0m
+{"level":"info","ts":1609692846.1618319,"caller":"git/git.go:105","msg":"Successfully cloned https://github.com/qbitflames/python-app-1.git @ v0.0.7 in path /workspace/source"}
+{"level":"warn","ts":1609692846.1619465,"caller":"git/git.go:152","msg":"Unexpected error: creating symlink: symlink /tekton/home/.ssh /root/.ssh: file exists"}
+{"level":"info","ts":1609692846.20378,"caller":"git/git.go:133","msg":"Successfully initialized and updated submodules in path /workspace/source"}
+
+Showing logs for build [32mqbitflames-python-app-1-master-l8fnv-7[0m stage [32mfrom-build-pack[0m and container [32mstep-setup-builder-home[0m
+
+Showing logs for build [32mqbitflames-python-app-1-master-l8fnv-7[0m stage [32mfrom-build-pack[0m and container [32mstep-git-merge[0m
+Using SHAs from PULL_REFS=master:
+WARNING: no SHAs to merge, falling back to initial cloned commit
+
+Showing logs for build [32mqbitflames-python-app-1-master-l8fnv-7[0m stage [32mfrom-build-pack[0m and container [32mstep-setup-jx-git-credentials[0m
+Generated Git credentials file /workspace/xdg_config/git/credentials
+
+Showing logs for build [32mqbitflames-python-app-1-master-l8fnv-7[0m stage [32mfrom-build-pack[0m and container [32mstep-build-python-unittest[0m
+
+----------------------------------------------------------------------
+Ran 0 tests in 0.000s
+
+OK
+
+Showing logs for build [32mqbitflames-python-app-1-master-l8fnv-7[0m stage [32mfrom-build-pack[0m and container [32mstep-build-container-build[0m
+E0103 16:54:08.928552       9 aws_credentials.go:77] while getting AWS credentials NoCredentialProviders: no valid providers in chain. Deprecated.
+	For verbose messaging see aws.Config.CredentialsChainVerboseErrors
+[36mINFO[0m[0000] Using dockerignore file: /workspace/source/.dockerignore 
+[36mINFO[0m[0000] Retrieving image manifest python:onbuild     
+E0103 16:54:09.176822       9 metadata.go:154] while reading 'google-dockercfg' metadata: http status code: 404 while fetching url http://metadata.google.internal./computeMetadata/v1/instance/attributes/google-dockercfg
+E0103 16:54:09.179035       9 metadata.go:166] while reading 'google-dockercfg-url' metadata: http status code: 404 while fetching url http://metadata.google.internal./computeMetadata/v1/instance/attributes/google-dockercfg-url
+[36mINFO[0m[0002] Retrieving image manifest python:onbuild     
+[36mINFO[0m[0002] Built cross stage deps: map[]                
+[36mINFO[0m[0002] Retrieving image manifest python:onbuild     
+[36mINFO[0m[0003] Retrieving image manifest python:onbuild     
+[36mINFO[0m[0004] Executing 3 build triggers                   
+[36mINFO[0m[0004] Checking for cached layer gcr.io/weighty-nation-272311/cache:4603157fb951c8b4502529c64ddc571c85e381ce4686ea05728e14a56a118e66... 
+[36mINFO[0m[0004] Using caching version of cmd: COPY requirements.txt /usr/src/app/ 
+[36mINFO[0m[0004] Checking for cached layer gcr.io/weighty-nation-272311/cache:26208b704f381cfc1f456d1b1b9697de2e61930f2b836f1a4480488b7e191354... 
+[36mINFO[0m[0005] Using caching version of cmd: RUN pip install --no-cache-dir -r requirements.txt 
+[36mINFO[0m[0005] Checking for cached layer gcr.io/weighty-nation-272311/cache:0f0baa08ad7f1e48d2c8fdb750619d74dacf4b5aff5006aa21ab3b9a3b1a76de... 
+[36mINFO[0m[0005] No cached layer found for cmd COPY . /usr/src/app 
+[36mINFO[0m[0005] cmd: EXPOSE                                  
+[36mINFO[0m[0005] Adding exposed port: 8080/tcp                
+[36mINFO[0m[0005] Unpacking rootfs as cmd COPY . /usr/src/app requires it. 
+[36mINFO[0m[0020] COPY requirements.txt /usr/src/app/          
+[36mINFO[0m[0020] Found cached layer, extracting to filesystem 
+[36mINFO[0m[0020] RUN pip install --no-cache-dir -r requirements.txt 
+[36mINFO[0m[0020] Found cached layer, extracting to filesystem 
+[36mINFO[0m[0020] COPY . /usr/src/app                          
+[36mINFO[0m[0020] Resolving 115 paths                          
+[36mINFO[0m[0020] Taking snapshot of files...                  
+[36mINFO[0m[0020] Pushing layer gcr.io/weighty-nation-272311/cache:0f0baa08ad7f1e48d2c8fdb750619d74dacf4b5aff5006aa21ab3b9a3b1a76de to cache now 
+[36mINFO[0m[0020] COPY requirements.txt .                      
+[36mINFO[0m[0020] Resolving 1 paths                            
+[36mINFO[0m[0020] Taking snapshot of files...                  
+[36mINFO[0m[0020] ENV PORT 8080                                
+[36mINFO[0m[0020] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0020] EXPOSE 8080                                  
+[36mINFO[0m[0020] cmd: EXPOSE                                  
+[36mINFO[0m[0020] Adding exposed port: 8080/tcp                
+[36mINFO[0m[0020] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0020] ENTRYPOINT ["python"]                        
+[36mINFO[0m[0020] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0020] CMD ["app.py"]                               
+[36mINFO[0m[0020] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0020] Pushing layer gcr.io/weighty-nation-272311/cache:e8fa89c5b08fc6d5767648dc9d986af52bc0ad98aba2d40392d499e4dd06ca75 to cache now 
+
+Showing logs for build [32mqbitflames-python-app-1-master-l8fnv-7[0m stage [32mfrom-build-pack[0m and container [32mstep-build-post-build[0m
+no CVE provider running in the current ** namespace so skip adding image to be analysed
+
+Showing logs for build [32mqbitflames-python-app-1-master-l8fnv-7[0m stage [32mfrom-build-pack[0m and container [32mstep-promote-changelog[0m
+Converted /workspace/source/charts/python-app-1 to an unshallow repository
+Generating change log from git ref c010a5210e7574a4d4b65a0c4a7d83828d626932 => c97dc38256dee2979910f69bf999d692879268b6
+WARNING: No release found for qbitflames/python-app-1 and tag v0.0.7 so creating a new release
+Updated the release information at https://github.com/qbitflames/python-app-1/releases/tag/v0.0.7
+generated: /workspace/source/charts/python-app-1/templates/release.yaml
+Created Release python-app-1-0-0-7 resource in namespace **
+Updating PipelineActivity qbitflames-python-app-1-master-7 with version 0.0.7
+Updated PipelineActivities qbitflames-python-app-1-master-7 with release notes URL: https://github.com/qbitflames/python-app-1/releases/tag/v0.0.7
+
+Showing logs for build [32mqbitflames-python-app-1-master-l8fnv-7[0m stage [32mfrom-build-pack[0m and container [32mstep-promote-helm-release[0m
+WARNING: No $CHART_REPOSITORY defined so using the default value of: http://jenkins-x-chartmuseum:8080
+Adding missing Helm repo: storage.googleapis.com https://storage.googleapis.com/chartmuseum.jenkins-x.io
+Successfully added Helm repository storage.googleapis.com.
+Adding missing Helm repo: jenkins-x-chartmuseum http://jenkins-x-chartmuseum:8080
+Successfully added Helm repository jenkins-x-chartmuseum.
+WARNING: No $CHART_REPOSITORY defined so using the default value of: http://jenkins-x-chartmuseum:8080
+Uploading chart file python-app-1-0.0.7.tgz to http://jenkins-x-chartmuseum:8080/api/charts
+error: Failed to post chart to http://jenkins-x-chartmuseum:8080/api/charts due to response 401: {"error":"unauthorized"}
+Received 401 response: {"error":"unauthorized"}
+[31m
+Pipeline failed on stage 'from-build-pack' : container 'step-promote-helm-release'. The execution of the pipeline has stopped.[0m
